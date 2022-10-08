@@ -1,0 +1,204 @@
+:root {
+  --almost-black: hsl(0, 0%, 8%);
+  --almost-white: hsl(0, 0%, 98%);
+  --amedium-grey: hsl(0, 0%, 41%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.15fr 1fr 0.6fr;
+  position: relative;
+  font-family: "Epilogue", sans-serif;
+  overflow: hidden;
+}
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.589);
+  z-index: 0;
+  transition: 0.3s;
+}
+
+.overlay.show {
+  display: block;
+}
+.nav-mobile {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 5% 3%;
+}
+
+.nav-mobile .nav-logo {
+  width: 25%;
+}
+.nav-mobile .nav-hamburger-item {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-right: 4%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.nav-page {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 65%;
+  height: 100%;
+  padding: 5%;
+  z-index: 100000;
+  background-color: var(--almost-white);
+  transition: 0.5s;
+  color: var(--amedium-grey);
+}
+.nav-page.show {
+  right: 0;
+}
+.nav-page .btn-close {
+  align-self: flex-end;
+}
+
+.nav-page .nav-item {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.nav-page .nav-header {
+  display: flex;
+  align-items: center;
+  font-size: 125%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  cursor: pointer;
+}
+.nav-header .arrow {
+  margin-left: 5%;
+}
+
+.nav-page .nav-link {
+  display: none;
+  align-items: center;
+  font-size: 107%;
+  margin-left: 10%;
+  margin-top: 3%;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--amedium-grey);
+}
+
+.nav-page .nav-link.show {
+  display: flex;
+}
+.nav-link svg {
+  margin-right: 5%;
+  transform: scale(1.2);
+}
+.nav-button {
+  width: 85%;
+  text-align: center;
+  margin: 5% auto 0;
+  padding: 3% 2%;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 2px solid var(--almost-black);
+}
+
+.hero-img-wrapper {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  background-image: url(https://raw.githubusercontent.com/JakubHaran1/small-page/main/image-hero-mobile.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.content {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  width: 100%;
+}
+.content h4 {
+  font-size: 215%;
+  margin: 10% 0;
+  text-align: center;
+  padding: 0 2%;
+}
+
+.content p {
+  text-align: center;
+  margin-bottom: 5%;
+  padding: 0 2%;
+  line-height: 143%;
+  color: var(--amedium-grey);
+}
+
+.content .btn-learn-more {
+  margin: 10%;
+  text-align: center;
+}
+.btn-learn-more a {
+  padding: 3%;
+  border: 2px solid var(--almost-black);
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--almost-black);
+}
+.btn-learn-more a:hover {
+  background-color: var(--almost-black);
+  color: white;
+}
+.content .logo-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15% 0;
+}
+.logo-grid svg {
+  transform: scale(0.8);
+}
+
+@media (orientation: landscape) {
+  .wrapper {
+    grid-template-rows: 0.15fr 0.8fr 0.6fr;
+    background-size: contain;
+  }
+  .hero-img {
+    max-width: 400px;
+  }
+  .content h4 {
+    margin: 4%;
+  }
+  .content .btn-learn-more {
+    margin: 7%;
+  }
+  .content .logo-grid {
+    margin: 10%;
+  }
+  .logo-grid svg {
+    transform: scale(1.3);
+  }
+}

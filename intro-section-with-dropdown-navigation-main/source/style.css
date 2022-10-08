@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.15fr 0.6fr 0.6fr;
+  position: relative;
+  height: 100vh;
+
+  overflow: hidden;
+}
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.589);
+  z-index: 0;
+  transition: 0.3s;
+}
+
+.overlay.show {
+  display: block;
+}
+.nav-mobile {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5%;
+  padding: 0 3%;
+}
+
+.nav-mobile .nav-logo {
+  width: 25%;
+}
+.nav-mobile .nav-hamburger-item {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-right: 4%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.nav-page {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 65%;
+  height: 100%;
+  padding: 5%;
+  z-index: 100000;
+  background-color: white;
+  transition: 0.5s;
+}
+.nav-page.show {
+  right: 0;
+}
+.nav-page .btn-close {
+  display: none;
+  align-self: flex-end;
+}
+
+.nav-page .btn-close.show {
+  display: block;
+}
+.nav-page .nav-item {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.nav-page .nav-header {
+  display: flex;
+  align-items: center;
+  font-size: 125%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  cursor: pointer;
+}
+.nav-header .arrow {
+  margin-left: 5%;
+}
+
+.nav-page .nav-link {
+  display: none;
+  align-items: center;
+  font-size: 107%;
+  margin-left: 10%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-page .nav-link.show {
+  display: flex;
+}
+.nav-link svg {
+  margin-right: 5%;
+}
+.nav-button {
+  width: 85%;
+  text-align: center;
+  margin: 5% auto 0;
+  padding: 3% 2%;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+.hero-img {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-image: url(https://raw.githubusercontent.com/JakubHaran1/small-page/main/image-hero-mobile.png);
+  background-size: cover;
+  background-position: center;
+}
+.content {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.content h4 {
+  font-size: 265%;
+  text-align: center;
+}
